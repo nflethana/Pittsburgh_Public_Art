@@ -3,43 +3,33 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>KML Click Capture Sample</title>
+    <title>Public Art of Pittsburgh</title>
     <style>
-      html, body {
-        height: 370px;
-        padding: 0;
-        margin: 0;
-        }
       #map {
-       height: 360px;
-       width: 300px;
+       height: 400px;
+       width: 100%;
        overflow: hidden;
        float: left;
        border: thin solid #333;
-       }
-      #capture {
-       height: 360px;
-       width: 480px;
-       overflow: hidden;
-       float: left;
-       background-color: #ECECFB;
-       border: thin solid #333;
-       border-left: none;
        }
     </style>
   </head>
   <body>
     <div id="map"></div>
-    <div id="capture"></div>
     <script>
       var map;
-      var src = './Pittsburgh Murals and Public Art.kmz.kml';
+      var src = 'https://www.dropbox.com/s/yc5i8h6jb8wz4u2/Public_Art_of_Pittsburgh.kmz?dl=0';
 
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-19.257753, 146.823688),
-          zoom: 2,
-          mapTypeId: 'terrain'
+        function initMap() {
+        var uluru = {lat: 40.440915, lng: -80.007859};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: uluru
+        });
+
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
         });
 
         var kmlLayer = new google.maps.KmlLayer(src, {
@@ -47,11 +37,11 @@
           preserveViewport: false,
           map: map
         });
-        kmlLayer.addListener('click', function(event) {
-          var content = event.featureData.infoWindowHtml;
-          var testimonial = document.getElementById('capture');
-          testimonial.innerHTML = content;
-        });
+        // kmlLayer.addListener('click', function(event) {
+        //   var content = event.featureData.infoWindowHtml;
+        //   var testimonial = document.getElementById('capture');
+        //   testimonial.innerHTML = content;
+        // });
       }
     </script>
     <script async defer
