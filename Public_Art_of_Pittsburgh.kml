@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
-    <name>Copy of Pittsburgh Murals and Public Art</name>
-    <description>A map of outdoor public art murals and sculptures in the Pittsburgh area. Includes links to images and information on each.</description>
+    <name>Public Art of Pittsburgh</name>
+    <description>Public Art of Pittsburgh</description>
     <Style id="icon-503-009D57-labelson">
       <IconStyle>
         <color>ff579d00</color>

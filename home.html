@@ -18,30 +18,18 @@
     <div id="map"></div>
     <script>
       var map;
-      var src = 'https://www.dropbox.com/s/yc5i8h6jb8wz4u2/Public_Art_of_Pittsburgh.kmz?dl=0';
+      var src = 'https://dl.dropbox.com/s/6g42tm3g0t9n38w/Public_Art_of_Pittsburgh.kml';
 
         function initMap() {
         var uluru = {lat: 40.440915, lng: -80.007859};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
+          zoom: 12,
           center: uluru
         });
 
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-
         var kmlLayer = new google.maps.KmlLayer(src, {
-          suppressInfoWindows: true,
-          preserveViewport: false,
           map: map
         });
-        // kmlLayer.addListener('click', function(event) {
-        //   var content = event.featureData.infoWindowHtml;
-        //   var testimonial = document.getElementById('capture');
-        //   testimonial.innerHTML = content;
-        // });
       }
     </script>
     <script async defer
