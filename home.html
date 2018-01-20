@@ -6,10 +6,9 @@
     <title>Public Art of Pittsburgh</title>
     <style>
       #map {
-       height: 400px;
+       height: 500px;
        width: 100%;
        overflow: hidden;
-       float: left;
        border: thin solid #333;
        }
     </style>
@@ -32,7 +31,8 @@
         });
 
         var kmlLayer = new google.maps.KmlLayer(src, {
-          map: map
+          map: map,
+          preserveViewport: true
         });
       }
     </script>
